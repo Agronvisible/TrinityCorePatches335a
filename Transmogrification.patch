@@ -683,20 +683,20 @@ index 0000000..ce95786
 +
 +    switch (slot)
 +    {
-+    case EQUIPMENT_SLOT_HEAD: return  "Head";// session->GetTrinityString(LANG_SLOT_NAME_HEAD);
-+    case EQUIPMENT_SLOT_SHOULDERS: return  "Shoulders";// session->GetTrinityString(LANG_SLOT_NAME_SHOULDERS);
-+    case EQUIPMENT_SLOT_BODY: return  "Shirt";// session->GetTrinityString(LANG_SLOT_NAME_BODY);
-+    case EQUIPMENT_SLOT_CHEST: return  "Chest";// session->GetTrinityString(LANG_SLOT_NAME_CHEST);
-+    case EQUIPMENT_SLOT_WAIST: return  "Waist";// session->GetTrinityString(LANG_SLOT_NAME_WAIST);
-+    case EQUIPMENT_SLOT_LEGS: return  "Legs";// session->GetTrinityString(LANG_SLOT_NAME_LEGS);
-+    case EQUIPMENT_SLOT_FEET: return  "Feet";// session->GetTrinityString(LANG_SLOT_NAME_FEET);
-+    case EQUIPMENT_SLOT_WRISTS: return  "Wrists";// session->GetTrinityString(LANG_SLOT_NAME_WRISTS);
-+    case EQUIPMENT_SLOT_HANDS: return  "Hands";// session->GetTrinityString(LANG_SLOT_NAME_HANDS);
-+    case EQUIPMENT_SLOT_BACK: return  "Back";// session->GetTrinityString(LANG_SLOT_NAME_BACK);
-+    case EQUIPMENT_SLOT_MAINHAND: return  "Main hand";// session->GetTrinityString(LANG_SLOT_NAME_MAINHAND);
-+    case EQUIPMENT_SLOT_OFFHAND: return  "Off hand";// session->GetTrinityString(LANG_SLOT_NAME_OFFHAND);
-+    case EQUIPMENT_SLOT_RANGED: return  "Ranged";// session->GetTrinityString(LANG_SLOT_NAME_RANGED);
-+    case EQUIPMENT_SLOT_TABARD: return  "Tabard";// session->GetTrinityString(LANG_SLOT_NAME_TABARD);
++    case EQUIPMENT_SLOT_HEAD: return  "Kopf";// session->GetTrinityString(LANG_SLOT_NAME_HEAD);
++    case EQUIPMENT_SLOT_SHOULDERS: return  "Schultern";// session->GetTrinityString(LANG_SLOT_NAME_SHOULDERS);
++    case EQUIPMENT_SLOT_BODY: return  "Hemd";// session->GetTrinityString(LANG_SLOT_NAME_BODY);
++    case EQUIPMENT_SLOT_CHEST: return  "Brust";// session->GetTrinityString(LANG_SLOT_NAME_CHEST);
++    case EQUIPMENT_SLOT_WAIST: return  "Taille";// session->GetTrinityString(LANG_SLOT_NAME_WAIST);
++    case EQUIPMENT_SLOT_LEGS: return  "Beine";// session->GetTrinityString(LANG_SLOT_NAME_LEGS);
++    case EQUIPMENT_SLOT_FEET: return  "Füße";// session->GetTrinityString(LANG_SLOT_NAME_FEET);
++    case EQUIPMENT_SLOT_WRISTS: return  "Handgelenke";// session->GetTrinityString(LANG_SLOT_NAME_WRISTS);
++    case EQUIPMENT_SLOT_HANDS: return  "Hände";// session->GetTrinityString(LANG_SLOT_NAME_HANDS);
++    case EQUIPMENT_SLOT_BACK: return  "Rücken";// session->GetTrinityString(LANG_SLOT_NAME_BACK);
++    case EQUIPMENT_SLOT_MAINHAND: return  "Haupthand";// session->GetTrinityString(LANG_SLOT_NAME_MAINHAND);
++    case EQUIPMENT_SLOT_OFFHAND: return  "Neben Hand";// session->GetTrinityString(LANG_SLOT_NAME_OFFHAND);
++    case EQUIPMENT_SLOT_RANGED: return  "Fernkampf";// session->GetTrinityString(LANG_SLOT_NAME_RANGED);
++    case EQUIPMENT_SLOT_TABARD: return  "Wappenrock";// session->GetTrinityString(LANG_SLOT_NAME_TABARD);
 +    default: return NULL;
 +    }
 +}
@@ -1622,7 +1622,7 @@ index 0000000..a608f4e
 +        {
 +            WorldSession* session = player->GetSession();
 +            if (sTransmogrification->EnableTransmogInfo)
-+                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/INV_Misc_Book_11:30:30:-18:0|tHow transmogrification works", EQUIPMENT_SLOT_END + 9, 0);
++                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/INV_Misc_Book_11:30:30:-18:0|tWie Funktionierts", EQUIPMENT_SLOT_END + 9, 0);
 +            for (uint8 slot = EQUIPMENT_SLOT_START; slot < EQUIPMENT_SLOT_END; ++slot)
 +            {
 +                if (const char* slotName = sTransmogrification->GetSlotName(slot, session))
@@ -1635,10 +1635,10 @@ index 0000000..a608f4e
 +            }
 +#ifdef PRESETS
 +            if (sTransmogrification->EnableSets)
-+                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/RAIDFRAME/UI-RAIDFRAME-MAINASSIST:30:30:-18:0|tManage sets", EQUIPMENT_SLOT_END + 4, 0);
++                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/RAIDFRAME/UI-RAIDFRAME-MAINASSIST:30:30:-18:0|tMeine Sets", EQUIPMENT_SLOT_END + 4, 0);
 +#endif
-+            player->ADD_GOSSIP_ITEM_EXTENDED(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/INV_Enchant_Disenchant:30:30:-18:0|tRemove all transmogrifications", EQUIPMENT_SLOT_END + 2, 0, "Remove transmogrifications from all equipped items?", 0, false);
-+            player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/PaperDollInfoFrame/UI-GearManager-Undo:30:30:-18:0|tUpdate menu", EQUIPMENT_SLOT_END + 1, 0);
++            player->ADD_GOSSIP_ITEM_EXTENDED(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/INV_Enchant_Disenchant:30:30:-18:0|tAlle Transmogrificationen Entfernen", EQUIPMENT_SLOT_END + 2, 0, "Alle Transmogrificationen Entfernen?", 0, false);
++            player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/PaperDollInfoFrame/UI-GearManager-Undo:30:30:-18:0|tAktualisieren", EQUIPMENT_SLOT_END + 1, 0);
 +            player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, creature->GetGUID());
 +            return true;
 +        }
@@ -1709,7 +1709,7 @@ index 0000000..a608f4e
 +                }
 +                else
 +                    player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/GuildBankFrame/UI-GuildBankFrame-NewTab:30:30:-18:0|tSave set", EQUIPMENT_SLOT_END + 8, 0);
-+                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tBack..", EQUIPMENT_SLOT_END + 1, 0);
++                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tzurück..", EQUIPMENT_SLOT_END + 1, 0);
 +                player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, creature->GetGUID());
 +            } break;
 +            case EQUIPMENT_SLOT_END + 5: // Use preset
@@ -1751,7 +1751,7 @@ index 0000000..a608f4e
 +
 +                player->ADD_GOSSIP_ITEM_EXTENDED(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/INV_Misc_Statue_02:30:30:-18:0|tUse set", EQUIPMENT_SLOT_END + 5, action, "Using this set for transmogrify will bind transmogrified items to you and make them non-refundable and non-tradeable.\nDo you wish to continue?\n\n" + it->second.name, 0, false);
 +                player->ADD_GOSSIP_ITEM_EXTENDED(GOSSIP_ICON_MONEY_BAG, "|TInterface/PaperDollInfoFrame/UI-GearManager-LeaveItem-Opaque:30:30:-18:0|tDelete set", EQUIPMENT_SLOT_END + 7, action, "Are you sure you want to delete " + it->second.name + "?", 0, false);
-+                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tBack..", EQUIPMENT_SLOT_END + 4, 0);
++                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tzurück..", EQUIPMENT_SLOT_END + 4, 0);
 +                player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, creature->GetGUID());
 +            } break;
 +            case EQUIPMENT_SLOT_END + 7: // Delete preset
@@ -1805,18 +1805,18 @@ index 0000000..a608f4e
 +                if (canSave)
 +                    player->ADD_GOSSIP_ITEM_EXTENDED(GOSSIP_ICON_MONEY_BAG, "|TInterface/GuildBankFrame/UI-GuildBankFrame-NewTab:30:30:-18:0|tSave set", 0, 0, "Insert set name", cost*sTransmogrification->SetCostModifier + sTransmogrification->SetCopperCost, true);
 +                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/PaperDollInfoFrame/UI-GearManager-Undo:30:30:-18:0|tUpdate menu", sender, action);
-+                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tBack..", EQUIPMENT_SLOT_END + 4, 0);
++                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tzurück..", EQUIPMENT_SLOT_END + 4, 0);
 +                player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, creature->GetGUID());
 +            } break;
 +            case EQUIPMENT_SLOT_END + 10: // Set info
 +            {
-+                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tBack..", EQUIPMENT_SLOT_END + 4, 0);
++                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tzurück..", EQUIPMENT_SLOT_END + 4, 0);
 +                player->SEND_GOSSIP_MENU(sTransmogrification->SetNpcText, creature->GetGUID());
 +            } break;
 +#endif
 +            case EQUIPMENT_SLOT_END + 9: // Transmog info
 +            {
-+                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tBack..", EQUIPMENT_SLOT_END + 1, 0);
++                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tzurück..", EQUIPMENT_SLOT_END + 1, 0);
 +                player->SEND_GOSSIP_MENU(sTransmogrification->TransmogNpcText, creature->GetGUID());
 +            } break;
 +            default: // Transmogrify
@@ -1977,7 +1977,7 @@ index 0000000..a608f4e
 +
 +            player->ADD_GOSSIP_ITEM_EXTENDED(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/INV_Enchant_Disenchant:30:30:-18:0|tRemove transmogrification", EQUIPMENT_SLOT_END + 3, slot, "Remove transmogrification from the slot?", 0, false);
 +            player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/PaperDollInfoFrame/UI-GearManager-Undo:30:30:-18:0|tUpdate menu", EQUIPMENT_SLOT_END, slot);
-+            player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tBack..", EQUIPMENT_SLOT_END + 1, 0);
++            player->ADD_GOSSIP_ITEM(GOSSIP_ICON_MONEY_BAG, "|TInterface/ICONS/Ability_Spy:30:30:-18:0|tzurück..", EQUIPMENT_SLOT_END + 1, 0);
 +            player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, creature->GetGUID());
 +        }
 +    };
