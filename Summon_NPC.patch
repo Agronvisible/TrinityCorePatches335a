@@ -1,4 +1,4 @@
-rom f1fd90b0cced5170356368dce0fc6a818c008c45 Mon Sep 17 00:00:00 2001
+From f1fd90b0cced5170356368dce0fc6a818c008c45 Mon Sep 17 00:00:00 2001
 From: LordPsyan <realmsofwarcraft@gmail.com>
 Date: Fri, 29 Aug 2014 08:47:01 -0400
 Subject: [PATCH] Summon_NPC
@@ -86,7 +86,7 @@ index 0000000..ce7ea24
 +        else
 +         o = o + 3.141592;
 +        pPlayer->GetClosePoint(x, y, z, pPlayer->GetObjectSize());
-+        Creature* pCreature = pPlayer->SummonCreature(100000, x, y, z+2.2, o, TEMPSUMMON_TIMED_DESPAWN, 5000);
++        Creature* pCreature = pPlayer->SummonCreature(100000, x, y, z+2.2, o, TEMPSUMMON_TIMED_DESPAWN, 50000);
 +        pCreature->CastSpell(pCreature, 63660);
 +        return false;
 +   }
